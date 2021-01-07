@@ -1,13 +1,25 @@
 {
-    "name": "YOUR-PROJECT-NAME-HERE",
+    "name": "electron-tray-tester",
     "version": "0.0.1",
     "main": "dist/electron/index.js",
-    "repository": "REPO",
-    "author": "AUTHOR",
+    "repository": "https://github.com/zardoy/electron-tray-tester.git",
+    "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
     "private": true,
     "homepage": "./",
-    "build": "TODO BUILD_CONFIG",
+    "build": {
+        "appId": "com.zardoy.electron-tray-tester",
+        "win": {
+            "target": "nsis"
+        },
+        "files": [
+            "build/**/*",
+            "node_modules/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        }
+    },
     "dependencies": {
         "electron-window-state": "^5.0.3",
         "react": "^17.0.1",
