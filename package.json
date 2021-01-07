@@ -1,0 +1,45 @@
+{
+    "name": "YOUR-PROJECT-NAME-HERE",
+    "version": "0.0.1",
+    "main": "dist/electron/index.js",
+    "repository": "REPO",
+    "author": "AUTHOR",
+    "license": "MIT",
+    "private": true,
+    "homepage": "./",
+    "build": "TODO BUILD_CONFIG",
+    "dependencies": {
+        "electron-window-state": "^5.0.3",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.16",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "cross-env": "^7.0.3",
+        "electron": "^11.1.1",
+        "source-map-explorer": "^2.5.1"
+    },
+    "scripts": {
+        "start-main": "tsc-watch -p \"./src/electron/tsconfig.json\" --onSuccess \"electron .\"",
+        "start-renderer": "cross-env BROWSER=none PORT=3500 rescripts start",
+        "build-renderer": "rescripts build",
+        "analyze-renderer": "source-map-explorer 'build/static/js/*.js'",
+        "run-local-test": "cd local-tests && ts-node --transpile-only index.ts",
+        "electron-pack": "electron-builder -w",
+        "preelectron-pack": "yarn build",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "development": [
+            "last 1 chrome version"
+        ],
+        "production": [
+            "last 1 chrome version"
+        ]
+    }
+}

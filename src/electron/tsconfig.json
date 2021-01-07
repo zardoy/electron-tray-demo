@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "strict": true,
+        "module": "CommonJS",
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "outDir": "../../dist",
+        "noEmitOnError": true
+    },
+    "include": [
+        ".",
+        "../app/electron-shared"
+    ]
+}

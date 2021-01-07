@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        // for toc (Table of Contents) auto update
+        "yzhang.markdown-all-in-one"
+    ]
+}
