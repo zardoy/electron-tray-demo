@@ -1,14 +1,14 @@
 {
-    "name": "electron-tray-tester",
+    "name": "electron-tray-demo",
     "version": "0.0.1",
     "main": "dist/electron/index.js",
-    "repository": "https://github.com/zardoy/electron-tray-tester.git",
+    "repository": "https://github.com/zardoy/electron-tray-demo.git",
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
     "private": true,
     "homepage": "./",
     "build": {
-        "appId": "com.zardoy.electron-tray-tester",
+        "appId": "com.zardoy.electron-tray-demo",
         "win": {
             "target": "nsis"
         },
