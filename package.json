@@ -29,6 +29,11 @@
         "react-dom": "^17.0.1"
     },
     "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "@rescripts/cli": "^0.0.15",
+        "@rescripts/rescript-env": "^0.0.12",
         "@types/node": "^14.14.16",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
