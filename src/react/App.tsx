@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-import { createMuiTheme, Grid, MuiThemeProvider, useMediaQuery } from "@material-ui/core";
+import { createMuiTheme, CssBaseline, Grid, MuiThemeProvider, useMediaQuery } from "@material-ui/core";
 
 import TrayControl from "./TrayControl";
 
@@ -21,6 +21,7 @@ let App: React.FC<ComponentProps> = () => {
     );
 
     return <MuiThemeProvider theme={muiTheme}>
+        <CssBaseline />
         <Grid
             // It's a flex container
             container
