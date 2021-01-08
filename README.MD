@@ -1,14 +1,19 @@
-# Electron React Template
+# Electron Tray Demo
 
-- [Advanced YouTube Downloader](#advanced-youtube-downloader)
-  - [Download](#download)
-  - [Description](#description)
-  - [Features](#features)
-  - [Development](#development)
-    - [📁 Folder structure](#-folder-structure)
-    - [How to start](#how-to-start)
+Simple electron tray demo.
 
-## How to use it
+## Development
 
-Create a new repository from this template: [github help page](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
-TODO
+### 📁 Folder structure
+
+```text
+├──📁src/            < All source code
+│   ├──📁electron/   < Electron (main process) 
+│   ├──📁react/      < React (renderer process)
+│   ├──📁react/electron-shared/     < Shared (commonly used for IPC types)
+```
+
+### How to start
+
+1. Install dependencies: `yarn` or `npm install`
+2. In VSCode press `CMD`(`CTRL`) + `SHIFT` + `B` to run default build task, which will open two terminals for development (electron - main and react - renderer)
