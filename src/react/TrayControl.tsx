@@ -9,16 +9,23 @@ interface ComponentProps {
 
 let TrayControl: React.FC<ComponentProps> = () => {
     const [trayIcons, setTrayIcons] = useState(0);
+    const [minReached, setMinReached] = useState(true);
 
     const changeNumberOfTrayIcons = useCallback((action: "add" | "remove") => {
-        setTrayIcons(
-            icons => icons + (action === "remove" ? -1 : 1)
-        );
+        setTrayIcons(iconsInTray => {
+            iconsInTray += (action === "remove" ? -1 : 1);
+            // disable "-" button if no icons in tray anymore
+            setMinReached(iconsInTray <= 0);
+            // return updated value
+            return iconsInTray;
+        });
         ipcRenderer.send(action === "remove" ? "remove-tray-icon" : "add-tray-icon", {});
     }, []);
 
     return <ButtonGroup color="primary" size="large">
         <Button
+            // if disabled is true onClick won't fire
+            disabled={minReached}
             onClick={() => changeNumberOfTrayIcons("remove")}
         >-</Button>
         <Button
