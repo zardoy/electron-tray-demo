@@ -46,8 +46,6 @@ const bindIpcMainEvents = () => {
 
 const createMainWindow = () => {
     const windowState = windowStateKeeper({
-        defaultWidth: 600,
-        defaultHeight: 300,
         fullScreen: false
     });
 
@@ -64,7 +62,7 @@ const createMainWindow = () => {
         }
     });
     mainWindow.loadURL(electronIsDev ? "http://localhost:3500" : `file://${path.join(__dirname, "../build/index.html")}`);
-    if (electronIsDev) mainWindow.webContents.openDevTools();
+    // if (electronIsDev) mainWindow.webContents.openDevTools();
 
     mainWindow.on("close", () => mainWindow = null);
 
