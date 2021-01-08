@@ -1,6 +1,6 @@
 # Electron Tray Demo
 
-Simple electron tray demo.
+Simple [electron](https://www.electronjs.org/) tray demo.
 
 - [Electron Tray Demo](#electron-tray-demo)
   - [Development](#development)
