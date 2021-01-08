@@ -53,8 +53,11 @@ const createMainWindow = () => {
 
     mainWindow = new BrowserWindow({
         ...windowState,
+        width: 600,
+        height: 300,
         center: true,
         resizable: false,
+        fullscreenable: false,
         webPreferences: {
             nodeIntegration: true,
             devTools: true
