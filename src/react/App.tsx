@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 
 import { createMuiTheme, CssBaseline, Grid, MuiThemeProvider, useMediaQuery } from "@material-ui/core";
+import { lightBlue } from "@material-ui/core/colors";
 
 import TrayControl from "./TrayControl";
 
@@ -13,8 +14,7 @@ let App: React.FC<ComponentProps> = () => {
         () => createMuiTheme({
             palette: {
                 type: isDarkTheme ? "dark" : "light",
-                // primary: lightBlue,
-                // secondary: blue
+                primary: lightBlue
             }
         }),
         [isDarkTheme]
