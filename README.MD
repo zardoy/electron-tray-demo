@@ -2,6 +2,11 @@
 
 Simple electron tray demo.
 
+- [Electron Tray Demo](#electron-tray-demo)
+  - [Development](#development)
+    - [📁 Folder structure](#-folder-structure)
+    - [How to start](#how-to-start)
+
 ## Development
 
 ### 📁 Folder structure
