@@ -3,6 +3,7 @@ import React, { useCallback, useState } from "react";
 import { ipcRenderer } from "electron";
 
 import { Button, ButtonGroup } from "@material-ui/core";
+import { Add as AddIcon, Remove as RemoveIcon } from "@material-ui/icons";
 
 interface ComponentProps {
 }
@@ -27,13 +28,18 @@ let TrayControl: React.FC<ComponentProps> = () => {
             // if disabled is true onClick won't fire
             disabled={minReached}
             onClick={() => changeNumberOfTrayIcons("remove")}
-        >-</Button>
+        >
+            {/* ideally we should use iherit property, but icon looks too small in this way */}
+            <RemoveIcon fontSize="small" />
+        </Button>
         <Button
             disabled
         >{trayIcons}</Button>
         <Button
             onClick={() => changeNumberOfTrayIcons("add")}
-        >+</Button>
+        >
+            <AddIcon fontSize="small" />
+        </Button>
     </ButtonGroup>;
 };
 
