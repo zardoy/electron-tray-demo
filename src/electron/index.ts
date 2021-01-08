@@ -3,6 +3,8 @@ import electronIsDev from "electron-is-dev";
 import windowStateKeeper from "electron-window-state";
 import path from "path";
 
+import { getFileFromPublic } from "./getFileFromPublic";
+
 let mainWindow: BrowserWindow | null;
 
 const loadApp = () => {
@@ -14,7 +16,7 @@ const bindIpcMainEvents = () => {
     const trays: Tray[] = [];
 
     ipcMain.on("add-tray-icon", () => {
-        const newTray = new Tray("");
+        const newTray = new Tray(getFileFromPublic("IconTemplate@2x.png"));
         newTray.setContextMenu(
             Menu.buildFromTemplate([
                 {
