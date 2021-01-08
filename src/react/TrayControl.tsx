@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 
 import { ipcRenderer } from "electron";
 
-import { Button, ButtonGroup, Typography } from "@material-ui/core";
+import { Button, ButtonGroup } from "@material-ui/core";
 
 interface ComponentProps {
 }
@@ -17,11 +17,13 @@ let TrayControl: React.FC<ComponentProps> = () => {
         ipcRenderer.send(action === "remove" ? "remove-tray-icon" : "add-tray-icon", {});
     }, []);
 
-    return <ButtonGroup color="primary">
+    return <ButtonGroup color="primary" size="large">
         <Button
             onClick={() => changeNumberOfTrayIcons("remove")}
         >-</Button>
-        <Typography variant="button">{trayIcons}</Typography>
+        <Button
+            disabled
+        >{trayIcons}</Button>
         <Button
             onClick={() => changeNumberOfTrayIcons("add")}
         >+</Button>
