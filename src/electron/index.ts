@@ -42,6 +42,10 @@ const bindIpcMainEvents = () => {
         if (!lastTray) return;
         lastTray.destroy();
     });
+
+    ipcMain.handle("get-number-of-trays", () => {
+        return trays.length;
+    });
 };
 
 const createMainWindow = () => {
