@@ -2,6 +2,8 @@
 
 Simple [electron](https://www.electronjs.org/) tray demo.
 
+> I use this demo to improve react-electron boilerplate.
+
 - [Electron Tray Demo](#electron-tray-demo)
   - [Development](#development)
     - [📁 Folder structure](#-folder-structure)
