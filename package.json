@@ -46,7 +46,7 @@
         "start-renderer": "craco-electron start",
         "build": "npm run build-renderer && npm run build-main",
         "build-main": "electron-builder -w",
-        "build-renderer": "rescripts build",
+        "build-renderer": "craco-electron build",
         "analyze-renderer": "source-map-explorer 'build/static/js/*.js'",
         "run-local-test": "cd local-tests && ts-node --transpile-only index.ts",
         "postinstall": "electron-builder install-app-deps"
