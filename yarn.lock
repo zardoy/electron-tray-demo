@@ -3792,10 +3792,10 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-craco-electron@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/craco-electron/-/craco-electron-1.0.0.tgz#431d20dae6b697607a8c8907aca56c825ea7376b"
-  integrity sha512-ub4nY1YTMiKvL/9CZsaTo5CICcfhceID4YqEkcjLWJ9Rsr1Oqdrv4rQ0Ylm6ApPJtqf4cj7Fmim7yHJZGmHkyw==
+craco-electron@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/craco-electron/-/craco-electron-1.0.2.tgz#38decd32975c76f4ca094d37562e9cdda0b94dce"
+  integrity sha512-5TnjzIHbGKQVxzl3ZjMUmPZJBt+gNuQQ+GOmw4MfhC1N0g3eT9Aq7/P0Fv+/PRCruI764Z+xOHdFyHnZLNGW2Q==
   dependencies:
     "@craco/craco" "^6.0.0"
     execa "^5.0.0"
