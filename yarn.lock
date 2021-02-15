@@ -12093,9 +12093,9 @@ type@^2.0.0:
   resolved "https://registry.yarnpkg.com/type/-/type-2.1.0.tgz#9bdc22c648cf8cf86dd23d32336a41cfb6475e3f"
   integrity sha512-G9absDWvhAWCV2gmF1zKud3OyC61nZDwWvBL2DApaVFogI07CprggiQAOOjvp2NRjYWFzPyu7vwtDrQFq8jeSA==
 
-"typed-ipc@https://github.com/zardoy/typed-ipc":
+"typed-ipc@https://github.com/zardoy/typed-ipc#build":
   version "0.0.0"
-  resolved "https://github.com/zardoy/typed-ipc#1539b91bdec71d14677d2428e5f16f366a83331d"
+  resolved "https://github.com/zardoy/typed-ipc#44a1cb4dc45cb4cc94874e9a58f380de4cdf530d"
   dependencies:
     type-fest "^0.21.0"
   optionalDependencies:
