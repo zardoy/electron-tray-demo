@@ -1,51 +1,17 @@
-import { app, BrowserWindow, ipcMain, Menu, Tray } from "electron";
+import { app, BrowserWindow, Tray } from "electron";
 import electronIsDev from "electron-is-dev";
 import windowStateKeeper from "electron-window-state";
 import path from "path";
 
-import { getFileFromPublic } from "./getFileFromPublic";
+import { bindIPC } from "./ipc";
 
-let mainWindow: BrowserWindow | null;
+export let mainWindow: BrowserWindow | null;
+
+export const trays: Tray[] = [];
 
 const loadApp = () => {
     createMainWindow();
-    bindIpcMainEvents();
-};
-
-const bindIpcMainEvents = () => {
-    const trays: Tray[] = [];
-
-    ipcMain.on("add-tray-icon", () => {
-        const newTray = new Tray(getFileFromPublic("IconTemplate@2x.png"));
-        newTray.setContextMenu(
-            Menu.buildFromTemplate([
-                {
-                    label: "Show application",
-                    click() {
-                        mainWindow?.show();
-                    }
-                },
-                {
-                    label: "Exit application",
-                    click() {
-                        app.exit();
-                    }
-                }
-            ])
-        );
-
-        trays.push(newTray);
-    });
-
-    ipcMain.on("remove-tray-icon", () => {
-        const lastTray = trays.pop();
-        if (!lastTray) return;
-        lastTray.destroy();
-    });
-
-    ipcMain.handle("get-number-of-trays", () => {
-        return trays.length;
-    });
+    bindIPC();
 };
 
 const createMainWindow = () => {

@@ -1,6 +1,6 @@
 import React, { useCallback, useLayoutEffect, useState } from "react";
 
-import { ipcRenderer } from "electron";
+import { typedIpcRenderer } from "typed-ipc";
 
 import { Button, ButtonGroup } from "@material-ui/core";
 import { Add as AddIcon, Remove as RemoveIcon } from "@material-ui/icons";
@@ -17,7 +17,7 @@ let TrayControl: React.FC<ComponentProps> = () => {
             // and that's fine for short functions like this, but in bigger one you shouldn't do this to avoid confusion
             trayIcons => trayIcons + (action === "remove" ? -1 : 1)
         );
-        ipcRenderer.send(action === "remove" ? "remove-tray-icon" : "add-tray-icon", {});
+        typedIpcRenderer.send(action === "remove" ? "removeTrayIcon" : "addTrayIcon");
     }, []);
 
     // we need to update the number of tray icons as fast as possible so we use useLayoutEffect instead of useEffect
@@ -25,9 +25,9 @@ let TrayControl: React.FC<ComponentProps> = () => {
     useLayoutEffect(() => {
         (async () => {
             // we could manually refresh the page (CTRL+R) after we added some tray icons, so to keep app in sync we do this:
-            setTrayIcons(
-                await ipcRenderer.invoke("get-number-of-trays")
-            );
+            const { data, error } = await typedIpcRenderer.request("getTraysNumber");
+            if (error) throw error;
+            setTrayIcons(data!);
         })();
     }, []);
 
