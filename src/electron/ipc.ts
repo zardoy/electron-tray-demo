@@ -5,7 +5,7 @@ import { mainWindow, trays } from "./";
 import { getFileFromPublic } from "./getFileFromPublic";
 
 export const bindIPC = () => {
-    typedIpcMain.handleAllQueries({
+    typedIpcMain.handleAllRequests({
         getTraysNumber: async () => trays.length
     });
 

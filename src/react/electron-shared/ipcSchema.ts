@@ -1,5 +1,5 @@
 declare module "typed-ipc" {
-    interface IpcMainQueries {
+    interface IpcMainRequests {
         getTraysNumber: {
             data: number;
         };

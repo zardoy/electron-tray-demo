@@ -25,8 +25,7 @@ let TrayControl: React.FC<ComponentProps> = () => {
     useLayoutEffect(() => {
         (async () => {
             // we could manually refresh the page (CTRL+R) after we added some tray icons, so to keep app in sync we do this:
-            const { data, error } = await typedIpcRenderer.request("getTraysNumber");
-            if (error) throw error;
+            const { data } = await typedIpcRenderer.request("getTraysNumber");
             setTrayIcons(data!);
         })();
     }, []);
