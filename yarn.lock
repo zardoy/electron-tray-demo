@@ -11694,7 +11694,7 @@ type@^2.0.0:
 
 "typed-ipc@https://github.com/zardoy/typed-ipc#build":
   version "0.0.0"
-  resolved "https://github.com/zardoy/typed-ipc#e2bb8b0c8d137ba052ad4adfccd12fe6f9228c84"
+  resolved "https://github.com/zardoy/typed-ipc#02547178c3cfc7064ffafaa87a0b278c60d17249"
   dependencies:
     type-fest "^0.21.0"
   optionalDependencies:
